@@ -6,7 +6,7 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJ
     {mode: 'cors'}
 ).then(
     function(response) {
-        console.log(response.json);
+        return response.json();
     }
 ).then(
     function(response) {
