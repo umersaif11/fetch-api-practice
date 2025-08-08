@@ -10,6 +10,6 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJ
     }
 ).then(
     function(response) {
-        response.data.images.original.url;
+        image.src = response.data.images.original.url;
     }
 )
