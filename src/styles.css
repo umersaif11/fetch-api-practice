@@ -21,6 +21,9 @@ body {
   align-items: center;
   gap: 10px;
 }
+h2{
+  color:#D3D3D3;
+}
 img{
   border-radius: 15px;
 }
