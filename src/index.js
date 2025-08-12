@@ -14,5 +14,9 @@ const getNewImage = () => {
             console.log(response);
             image.src = response.data.images.original.url;
         })
+        .catch(function(error) {
+            console.log('Error Fetching:', error);
+        })
 }
+imgButton.addEventListener('click', getNewImage);
 getNewImage();
