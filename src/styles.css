@@ -21,7 +21,9 @@ body {
   align-items: center;
   gap: 10px;
 }
-
+img{
+  border-radius: 15px;
+}
 button#new-img{
    font-family: 'Nothing You Could Do';
    font-size: 1.5rem;
