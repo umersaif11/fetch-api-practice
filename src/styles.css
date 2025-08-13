@@ -39,8 +39,14 @@ h2{
   border-radius: 20px;
   border: none;
 }
-
-
+#search button {
+  padding: 8px;
+  border: none;
+  background-color: #D3D3D3;
+  border-radius: 20px; 
+  cursor: pointer;
+  font-family: 'Lumanosimo';
+}
 img{
   border-radius: 15px;
 }
