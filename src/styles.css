@@ -32,7 +32,13 @@ h2{
   width: 100%;
   justify-content: center;
 }
-
+#search-input{
+  font-family: 'Lumanosimo';
+  padding: 8px;
+  width: 300px;
+  border-radius: 20px;
+  border: none;
+}
 
 
 img{
