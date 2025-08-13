@@ -24,6 +24,7 @@ body {
 }
 h2{
   color:#D3D3D3;
+  text-decoration: underline;
 }
 img{
   border-radius: 15px;
