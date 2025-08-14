@@ -27,6 +27,7 @@ const getNewImage = () => {
         })
         .catch(function(error) {
             console.log('Error Fetching:', error);
+            image.src = 'https://placehold.co/480x360?text=Error';
         })
 }
 imgButton.addEventListener('click', getNewImage);
