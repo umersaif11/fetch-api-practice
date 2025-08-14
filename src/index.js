@@ -24,5 +24,5 @@ const getNewImage = () => {
         })
 }
 imgButton.addEventListener('click', getNewImage);
-// searchButton.addEventListener('click', getNewImage)
+searchButton.addEventListener('click', getNewImage)
 getNewImage();
