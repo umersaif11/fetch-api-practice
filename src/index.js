@@ -8,7 +8,7 @@ const searchButton = document.querySelector('#search-button');
 const h2 = document.querySelector('h2');
 
 const getNewImage = () => {
-    // const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
+    const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
     // h2.textContent = (searchInput.value || 'cats') + '@Giphy-API';
     fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=cats`,
         {mode: 'cors'})
