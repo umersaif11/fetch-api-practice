@@ -6,8 +6,10 @@ const imgButton = document.querySelector('button#new-img');
 const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
 const h2 = document.querySelector('h2');
+const loadingPlaceholder = 'https://placehold.co/480x360/282828/D3D3D3?text=Loading...';
 
 const getNewImage = () => {
+    image.src = loadingPlaceholder;
     const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
     h2.textContent = (searchInput.value || 'cats') + '@Giphy-API';
     fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=${searchParameter}`,
