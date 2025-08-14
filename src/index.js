@@ -19,7 +19,11 @@ const getNewImage = () => {
         })
         .then(function(response) {
             console.log(response);
-            image.src = response.data.images.original.url;
+            if(response.data && Object.keys(response.data).length > 0){
+                image.src = response.data.images.original.url;
+            } else {
+                image.src = 'https://placehold.co/480x360?text=No+GIF+Found';
+            }
         })
         .catch(function(error) {
             console.log('Error Fetching:', error);
