@@ -18,7 +18,6 @@ const getNewImage = () => {
             return response.json();
         })
         .then(function(response) {
-            console.log(response);
             if(response.data && Object.keys(response.data).length > 0){
                 image.src = response.data.images.original.url;
             } else {
@@ -33,3 +32,4 @@ const getNewImage = () => {
 imgButton.addEventListener('click', getNewImage);
 searchButton.addEventListener('click', getNewImage)
 getNewImage();
+
