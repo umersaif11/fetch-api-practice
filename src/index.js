@@ -36,8 +36,13 @@ async function getNewImage() {
     try {
         const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=${searchParameter}`,
             {mode: 'cors'});
+        console.log(response);
+        const responseData =  await response.json();
+        console.log(responseData);
     }
-    
+    catch(error) {
+
+    }
 }
 imgButton.addEventListener('click', getNewImage);
 searchButton.addEventListener('click', getNewImage)
