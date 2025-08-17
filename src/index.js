@@ -29,10 +29,15 @@ const loadingPlaceholder = 'https://placehold.co/480x360/282828/D3D3D3?text=Load
 //             image.src = 'https://placehold.co/480x360?text=Error';
 //         })
 // }
-async getNewImage = () => {
+async function getNewImage() {
     image.src = loadingPlaceholder;
     const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
     h2.textContent = (searchInput.value || 'cats') + '@Giphy-API';
+    try {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=${searchParameter}`,
+            {mode: 'cors'});
+    }
+    
 }
 imgButton.addEventListener('click', getNewImage);
 searchButton.addEventListener('click', getNewImage)
