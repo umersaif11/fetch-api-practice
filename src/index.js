@@ -17,10 +17,10 @@ async function getNewImage() {
             {mode: 'cors'});
         const responseData =  await response.json();
         if(responseData.data && Object.keys(responseData.data).length > 0){
-                image.src = responseData.data.images.original.url;                
-            } else {
-                 image.src = 'https://placehold.co/480x360?text=No+GIF+Found';
-            }
+            image.src = responseData.data.images.original.url;                
+        } else {
+            image.src = 'https://placehold.co/480x360?text=No+GIF+Found';
+        }   
     }
     catch(error) {
         console.log('Error Fetching:', error);
