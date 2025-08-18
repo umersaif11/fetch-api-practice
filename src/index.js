@@ -8,27 +8,6 @@ const searchButton = document.querySelector('#search-button');
 const h2 = document.querySelector('h2');
 const loadingPlaceholder = 'https://placehold.co/480x360/282828/D3D3D3?text=Loading...';
 
-// const getNewImage = () => {
-//     image.src = loadingPlaceholder;
-//     const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
-//     h2.textContent = (searchInput.value || 'cats') + '@Giphy-API';
-//     fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=${searchParameter}`,
-//         {mode: 'cors'})
-//         .then(function(response) {  
-//             return response.json();
-//         })
-//         .then(function(response) {
-//             if(response.data && Object.keys(response.data).length > 0){
-//                 image.src = response.data.images.original.url;
-//             } else {
-//                 image.src = 'https://placehold.co/480x360?text=No+GIF+Found';
-//             }
-//         })
-//         .catch(function(error) {
-//             console.log('Error Fetching:', error);
-//             image.src = 'https://placehold.co/480x360?text=Error';
-//         })
-// }
 async function getNewImage() {
     image.src = loadingPlaceholder;
     const searchParameter = searchInput.value ? encodeURIComponent(searchInput.value) : 'cats';
@@ -36,12 +15,16 @@ async function getNewImage() {
     try {
         const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Rocr3dF9OJIPffDstJlOTANXJBymd59v&s=${searchParameter}`,
             {mode: 'cors'});
-        console.log(response);
         const responseData =  await response.json();
-        console.log(responseData);
+        if(responseData.data && Object.keys(responseData.data).length > 0){
+                image.src = responseData.data.images.original.url;                
+            } else {
+                 image.src = 'https://placehold.co/480x360?text=No+GIF+Found';
+            }
     }
     catch(error) {
-
+        console.log('Error Fetching:', error);
+        image.src = 'https://placehold.co/480x360?text=Error';
     }
 }
 imgButton.addEventListener('click', getNewImage);
